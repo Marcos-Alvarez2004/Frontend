@@ -8,6 +8,7 @@ import ContactoPage from "./pages/ContactoPage";
 import HomePage from "./pages/HomePages";
 import NosotrosPage from "./pages/NosotrosPage";
 import NovedadesPage from "./pages/NovedadesPage";
+import GaleriaPage from "./pages/GaleriaPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/nosotros" exact element={<NosotrosPage />} />
+        <Route path="/galeria" exact element={<GaleriaPage />} />
         <Route path="/novedades" exact element={<NovedadesPage />} />
         <Route path="/contacto" exact element={<ContactoPage />} />
       </Routes>
