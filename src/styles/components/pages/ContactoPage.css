@@ -1,87 +1,82 @@
-.formulario {
+.contacto {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 24px;
+}
+
+.contacto div {
+  width: 100%;
+}
+
+.datos p {
+  font-size: 14px;
+}
+
+.datos ul li {
+  font-size: 13px;
 }
 
 .formulario p {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 50%;
 }
 
 .formulario p label {
-  font-size: 20px;
-  padding: 10px 0;
-  font-weight: 700;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .formulario p input {
   width: 100%;
-  font-size: 16px;
-  padding: .5rem 1rem;
-  text-align: center;
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 1.0);
-  outline: none;
-  margin: 15% 0;
+  border: 1px solid #000;
+  background-color: #ddd;
+  padding: .3rem .5rem;
 }
 
-.formulario p input:focus::placeholder {
+.formulario p:nth-child(4) {
+  align-items: start;
+}
+
+.formulario textarea {
+  resize: none;
+  height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  background: #ddd;
+  padding: .3rem .5rem;
+}
+
+.formulario input[type="submit"] {
+  background: #6da9ed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 20px;
+  width: auto;
+  position: relative;
+  left: 5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.formulario input[type="submit"]:hover {
+  background-color: #2e64a1;
+}
+
+.formulario p input:focus::placeholder{
   visibility: hidden;
 }
 
-.formulario p textarea {
-  resize: vertical;
-  font-size: 16px;
-  width: 80%;
-  padding: .5rem 1rem;
-  max-height: 20vh;
-  height: 3vh;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 1.0);
-  margin: 15% 0;
+.formulario p textarea:focus::placeholder{
+  visibility: hidden;
 }
 
-.btn {
-  border: none;
-  cursor: pointer;
-  background-color: #2e64a1;
-  border-radius: 5px;
-  color: #fff;
-  text-align: center;
-  transition: .5s;
-  margin: 15% 0;
+.datos ul li a {
+  text-decoration: none;
+  color: #6da9ed;
 }
 
-.btn:hover {
-  filter: brightness(125%);
-}
-
-.datos ul {
-  list-style: none;
-}
-
-.datos ul li {
-  padding: 20px 0;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.datos ul li i {
-  cursor: pointer;
-  transition: .5s;
-}
-
-.datos ul li i:hover {
-  scale: 1.5;
+.datos ul li a:hover {
+  color: #2e64a1;
 }

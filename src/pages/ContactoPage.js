@@ -1,14 +1,11 @@
 import React from "react";
 import "../styles/components/pages/ContactoPage.css"
-import { BsFacebook, BsFillTelephoneFill, BsTwitter, BsSkype} from "react-icons/bs"
-import { MdEmail } from "react-icons/md"
-import { AiFillInstagram } from "react-icons/ai";
 
 
 const ContactoPage = (props) => {
   return(
-    <main className="holder">
-      <div className="columna contacto">
+    <main className="holder contacto">
+      <div className="columna">
         <h2>Complete el siguiente formulario</h2>
         <form action="" method="" className="formulario">
           <p>
@@ -24,23 +21,23 @@ const ContactoPage = (props) => {
             <input type="text" name="telefono" placeholder="Numero" />
           </p>
           <p>
-            <label>Comentario</label>
+            <label>Mensaje</label>
             <textarea name="mensaje" placeholder="Mensaje"></textarea>
           </p>
-          <p className="centrar"><input className="btn" type="submit" value="Enviar" /></p>
-
+          <p>
+            <input type="submit" value="Enviar" />
+          </p>
         </form>
       </div>
       <div className="columna datos">
         <h2>Otras vias de contacto</h2>
         <p>También puede contactarse con nosotros usando los siguiente medios:</p>
         <ul>
-          <li><i><BsFillTelephoneFill /></i></li>
-          <li><i><MdEmail /></i></li>
-          <li><i><BsFacebook /></i></li>
-          <li><i><BsTwitter /></i></li>
-          <li><i><BsSkype /></i></li>
-          <li><i><AiFillInstagram /></i></li>
+          <li>Teléfono: 123456789</li>
+          <li>Email: example@gmail.com</li>
+          <li>Facebook: <a href="https://facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
+          <li>Twitter: <a href="https://twitter.com/" target="_blank" rel="noreferrer">Twiiter</a></li>
+          <li>Skype: <a href="https://www.skype.com/es/" target="_blank" rel="noreferrer">Skype</a></li>
         </ul>
       </div>
     </main>
