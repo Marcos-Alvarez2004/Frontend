@@ -1,26 +1,41 @@
-import React from "react";
-import "../styles/components/pages/NovedadesPage.css"
+import React, { useState, useEffect } from "react";
+import "../styles/components/pages/NovedadesPage.css";
+import axios from "axios";
+import NovedadItem from "../components/novedades/NovedadItem";
 
 const NovedadesPage = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [novedades, setNovedades] = useState([]);
+
+  useEffect(() => {
+    const cargarNovedades = async () => {
+      setLoading(true);
+      const response = await axios.get("http://localhost:4000/api/novedades");
+      setNovedades(response.data);
+      setLoading(false);
+    };
+
+    cargarNovedades();
+  }, []);
+
   return (
     <section className="holder">
-        <h2>Novedades</h2>
-        <div className="novedades">
-          <h3>Titulo</h3>
-          <h4>Subtitulo</h4>
-          <p>Descripcion - Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptas, illo esse accusantium enim quae, incidunt culpa hic deleniti perferendis a dolor quibusdam assumenda obcaecati temporibus asperiores reiciendis vitae? Esse.</p>
-          <hr />
-          <h3>Titulo</h3>
-          <h4>Subtitulo</h4>
-          <p>Descripcion - Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptas, illo esse accusantium enim quae, incidunt culpa hic deleniti perferendis a dolor quibusdam assumenda obcaecati temporibus asperiores reiciendis vitae? Esse.</p>
-          <hr />
-          <h3>Titulo</h3>
-          <h4>Subtitulo</h4>
-          <p>Descripcion - Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptas, illo esse accusantium enim quae, incidunt culpa hic deleniti perferendis a dolor quibusdam assumenda obcaecati temporibus asperiores reiciendis vitae? Esse.</p>
-          <hr />
-        </div>
+      <h2>Novedaes</h2>
+      {loading ? (
+        <p>Cargando...</p>
+      ) : (
+        novedades.map((item) => (
+          <NovedadItem
+            key={item.id}
+            title={item.titulo}
+            subtitle={item.subtitulo}
+            imagen={item.imagen}
+            body={item.cuerpo}
+          />
+        ))
+      )}
     </section>
   );
-}
+};
 
 export default NovedadesPage;
